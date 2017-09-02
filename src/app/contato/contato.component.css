@@ -1,0 +1,48 @@
+.formulario{
+    background: #1B1B1B;
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(..//..//assets/images/background.jpg);
+    font-family: 'Ubuntu',serif;    
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2, p{
+    color: white;
+}
+
+.label-form{
+    color: #F58623;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.form-input, .text-area-form{
+    width: 80%;
+    background: #1B1B1B;
+    color: white;
+    border: 0;  
+    padding: 10px 0 10px 10px;         
+    
+}
+
+.btn-form{
+    background-color: transparent;
+    color: #F58623;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid   ;    
+    text-decoration: none;
+    margin: 20px 0;
+    border-radius: 0;
+}
+
+.btn-form:hover{
+    color: white;
+    background: #F58623; 
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;           
+}

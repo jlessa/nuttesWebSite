@@ -1,0 +1,27 @@
+<website-menu></website-menu>
+<section class="posts">
+  <div class="container">
+    <div class="row" *ngFor="let post of posts">
+      <div class="post text-center">
+        <div class="cabecalho-post">
+          <div class="profile-header row">
+            <img class="img-circle" [src]="user.foto_profile" />
+            <h4>{{user.nome}}</h4>
+          </div>
+          <!-->
+          <-->
+            <figure>
+              <img [src]="post.foto_postagem" alt="">
+            </figure>
+
+            <div class="text-content post-info">
+              <div class="icon"><i class="fa fa-heart"> <span>{{post.total_curtidas}} Likes</span></i></div>
+              <p>{{post.texto_postagem}}</p>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<website-footer></website-footer>

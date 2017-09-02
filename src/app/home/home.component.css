@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body, section, header, aside, footer{
+    font-family: 'Ubuntu',serif;
+    background-color: #1B1B1B;
+ }
+
+.navbar{
+    margin-bottom: 0px;
+    border-radius: 0px;    
+    padding: 10px 10px 15px 80px;        
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    padding-right: 70px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #F58623;
+}
+.navbar-toggle{
+    padding: 20px 10px;
+}
+.navbar img{  
+      width: 40%;
+      height: 90%;    
+}
+
+.navbar-inverse .navbar-collapse {    
+    margin-top: 10px;
+}
+
+.destaques{    
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(..//..//assets/images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.destaques h2{
+    color: white;
+    text-transform: uppercase;
+}
+
+.quadro-destaque{
+    margin-top: 20px;
+    background: #1B1B1B;
+    border: 5px solid #1B1B1B; 
+    margin-bottom: 40px;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.quadro-destaque:hover{
+    background: #C15C03;
+    border: 5px solid #C15C03;         
+}
+
+.quadro-destaque:hover p{
+    color: white;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.quadro-destaque p {
+    color: #F58623;
+    margin-top: 12px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    font-style: italic;
+}
+.quadro-destaque img{
+    width: 100%;
+    height: auto;
+}
+
+.meninas h2{
+    color: white;
+    text-transform: uppercase;
+    margin: 40px 0;    
+}
+
+.foto-menina {
+    margin: 0px;
+    padding: 0px;
+    border: 2px solid #1B1B1B;    
+}
+
+.foto-menina:hover {    
+    border: 2px solid #F58623;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.foto-menina img {
+    width: 100%;
+}
+
+.carousel-images{
+    margin-top: 90px;
+}
+
+.midia h2 {
+    color: white;
+    text-transform: uppercase;
+    margin: 40px 0;    
+    
+}
+h2:after{
+    width: 100px;
+    height: 2px;
+    background-color: #F58623;
+    display: block;
+    content: " ";
+    margin: 0 auto;
+    margin-top: 10px;
+  
+}
+
+
+.social-box ul{
+    list-style: none;
+    text-align: center;
+    
+}
+
+.social-box li{
+    display: inline-block;
+    margin-right: 90px;
+}
+
+.icon i 
+{
+    width: 63px;
+    height: 63px;
+    text-align: center;
+    font-size: 30px;    
+    color: #F58623;
+    border-radius: 50%;
+    border: 2px solid #F58623;
+    line-height: 63px;
+    margin: 20px 0px;
+}
+
+.icon:hover i
+{
+    color: white;
+    background-color: #F58623;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;       
+}
+
+
+@media (max-width: 767px) {
+    
+        .social-box ul{
+            margin-left: 60px;
+        }
+        
+        .navbar[_ngcontent-c0]{
+            padding: 10px 15px;
+        }
+        .navbar-toggle[_ngcontent-c0]{
+            padding: 20px 0;
+            border: 0px;
+        }
+
+        .rodape img{  
+            margin-top: 30px;
+            width: 30%;            
+            margin: 30px 0 30px 30px;     
+        }
+    }
+
+@media (min-width: 768px) {
+    .rodape img{  
+        margin-top: 30px;
+        width: 10%;    
+        margin: 30px 0 30px 30px;     
+    }
+    .social-box ul{
+        margin-left: 60px;
+    }
+}

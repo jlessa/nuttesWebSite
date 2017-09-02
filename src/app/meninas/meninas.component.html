@@ -1,0 +1,96 @@
+<website-menu></website-menu>
+<section>
+    <div class="container-fluid menina-principal">
+        <div class="row">
+            <div (click)="clickPerfilButton()" class="col-md-3 perfil">
+                <h2 class="text-center"><i class="fa fa-angle-down" aria-hidden="true"></i> Laura Mendes</h2>
+                <ul *ngIf="isPerfilVisible">
+                    <li><span>Idade: </span> 23</li>
+                    <li><span>Altura: </span>1,65</li>
+                    <li><span>Peso: </span>50Kg</li>
+                    <li><span>Horário: </span>00:00 as 05:00</li>
+                    <li><span>Local: </span>Barra da Tijuca</li>
+                    <li><span>Gosta: </span>Homens e Mulheres</li>
+                </ul>
+            </div>
+            <div class="col-md-6 carousel-images">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+            </div>
+            <div class="col-md-3 redes-sociais">
+                <div class="container-fluid">
+
+                    <h2 class="text-center">Redes Sociais</h2>
+                    <div class="social-box">
+                        <ul>
+                            <li>
+                                <div class="icon"><i class="fa fa-android"></i></div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa fa-apple"></i></div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa fa-facebook"></i></div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa fa-instagram"></i></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 destaques">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="text-center">Destaques da Semana</h2>
+                    </div>
+                </div>
+
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <div class="quadro-destaque">
+                                <img src="../assets/images/carousel/carousel1.jpg" alt="">
+                                <p class="text-center">Cris</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="quadro-destaque">
+                                <img src="../assets/images/carousel/carousel2.jpg" alt="">
+                                <p class="text-center">Joana</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="quadro-destaque">
+                                <img src="../assets/images/carousel/carousel3.jpg" alt="">
+                                <p class="text-center">Fernanda</p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="quadro-destaque">
+                                <img src="../assets/images/carousel/carousel4.jpg" alt="">
+                                <p class="text-center">Marina</p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="quadro-destaque">
+                                <img src="../assets/images/carousel/carousel5.jpg" alt="">
+                                <p class="text-center">Juliana</p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="quadro-destaque">
+                                <img src="../assets/images/carousel/carousel6.jpg" alt="">
+                                <p class="text-center">Rozana Alves</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<website-footer></website-footer>
