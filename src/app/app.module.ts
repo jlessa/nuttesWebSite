@@ -1,3 +1,11 @@
+import { PerfilComponent } from './admin/perfil-admin/perfil.component';
+import { GaleriaComponent } from './admin/galeria-admin/galeria.component';
+import { UserService } from './admin/perfil-admin/user.service';
+import { HttpModule } from '@angular/http';
+import { CarService } from './admin/modelos-admin/car-service';
+import { ModelosAdminComponent } from './admin/modelos-admin/modelos-admin.component';
+import { DashboardComponent } from './admin/dashboard-admin/dashboard-admin.component';
+import { StatisticComponent } from './admin/statistic-component/statistic.component';
 import { importPrimeNg } from './admin/primeNg.config';
 import { AdminComponent } from './admin/admin.component';
 import { IonicAppService } from './services/ionic-app.service';
@@ -16,9 +24,10 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { WebsiteMenuComponent } from './website-menu/website-menu.component';
 import { WebsiteFooterComponent } from './website-footer/website-footer.component';
-import { MenuModule} from 'primeng/primeng';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdSidenavModule} from '@angular/material';
+import { MenuModule } from 'primeng/primeng';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdSidenavModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,22 +39,30 @@ import {MdSidenavModule} from '@angular/material';
     AppPostsComponent,
     AdminComponent,
     WebsiteMenuComponent,
-    WebsiteFooterComponent
+    WebsiteFooterComponent,
+    StatisticComponent,
+    PerfilComponent,
+    DashboardComponent,
+    ModelosAdminComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
+    FormsModule,
     routes,
     NgxGalleryModule,
     InfiniteScrollModule,
-    importPrimeNg,
-    MdSidenavModule
+    importPrimeNg
   ],
   exports: [
     RouterModule
   ],
   providers: [
-    IonicAppService
+    IonicAppService,
+    CarService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

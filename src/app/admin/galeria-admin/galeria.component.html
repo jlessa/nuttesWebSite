@@ -1,0 +1,115 @@
+<app-admin></app-admin>
+<div class="ui-g">
+    <div class="ui-g-12 ui-md-6 ui-lg-3">
+        <h3>Busca</h3>
+        <p-autoComplete [(ngModel)]="userFilter" [suggestions]="filteredUsers" (completeMethod)="filterNames($event)" [size]="40"
+            [minLength]="1" placeholder="Digite o nome da Modelo" [dropdown]="false" (onClear)="clearAutoComplete()" (onSelect)="handleDropdownClick($event)">
+            <ng-template let-user pTemplate="user">
+                <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+                    <img [src]="user.foto_profile" style="width:80px;height:80px;display:inline-block;margin:5px 0 2px 5px" />
+                    <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{user.nome}}</div>
+                </div>
+            </ng-template>
+        </p-autoComplete>
+    </div>
+</div>
+
+<!--
+<button pButton (click)="removeDefaultGaleria(selectedUser)" class="ui-button-success" type="button" icon="fa-check"
+    label="Teste"></button>
+-->
+
+<div class="ui-g" *ngIf="showPanel">
+    <div class="ui-g-12 ui-md-12 ui-lg-12">
+        <p-panel header="Galeria" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                            <img [src]="imageUploadGaleria" width="400" height="200" alt="">
+                        </div>
+                        <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                            <h3 style="text-align: center">{{galeriaFileName}}</h3>
+                        </div>
+                        <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                            <label *ngIf="galeriaFileName.length <= 0" for='input-file'><i class="fa fa-upload btn-icon"></i>Upload</label>
+                            <input id="input-file" *ngIf="galeriaFileName.length <= 0" class="btn-file-upload" type="file" (change)="fileLoad($event,uploadType[0])"
+                                value="">
+                            <div class="btn-confirm-upload">
+                                <button pButton *ngIf="galeriaFileName.length > 0" (click)="addFotoGaleria()" class="ui-button-success" type="button" icon="fa-check"
+                                    label="Confirmar"></button>
+                                <button pButton *ngIf="galeriaFileName.length > 0" (click)="cancelUpload(uploadType[0])" class="ui-button-danger" type="button"
+                                    icon="fa-close" label="Cancelar"></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6">
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                            <p-galleria class="galleriaImg" [images]="images" panelWidth="innerWidth" panelHeight="313" [showCaption]="true"></p-galleria>
+                        </div>
+                        <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                            <h3 style="text-align: center">{{selectedUser.nome}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+</div>
+
+<div class="ui-g" *ngIf="showPanel">
+    <div class="ui-g-12 ui-md-6 ui-lg-6">
+        <p-growl [value]="msgs"></p-growl>
+        <p-panel header="Foto Perfil" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                    <img [src]="imageUploadProfile" width="200" height="200" alt="">
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                    <h3 style="text-align: center">{{profileFileName}}</h3>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-12 btn-group-upload" style="text-align: center">
+                    <label *ngIf="profileFileName.length <= 0" for='input-file-profile'><i class="fa fa-upload btn-icon"></i>Upload</label>
+                    <input id="input-file-profile" *ngIf="profileFileName.length <= 0" class="btn-file-upload" type="file" (change)="fileLoad($event,uploadType[1])"
+                        value="">
+                    <div class="btn-confirm-upload">
+                        <button pButton *ngIf="profileFileName.length > 0" (click)="updateImageProfile()" class="ui-button-success" type="button"
+                            icon="fa-check" label="Confirmar"></button>
+                        <button pButton *ngIf="profileFileName.length > 0" (click)="cancelUpload(uploadType[1])" class="ui-button-danger" type="button"
+                            icon="fa-close" label="Cancelar"></button>
+
+                    </div>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+
+    <div class="ui-g-12 ui-md-6 ui-lg-6">
+        <p-growl [value]="msgs"></p-growl>
+        <p-panel header="Foto Capa" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                    <img [src]="imageUploadCapa" width="200" height="200" alt="">
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center">
+                    <h3 style="text-align: center">{{capaFileName}}</h3>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-12 btn-group-upload" style="text-align: center">
+                    <label *ngIf="capaFileName.length <= 0" for='input-file-capa'><i class="fa fa-upload btn-icon"></i>Upload</label>
+                    <input id="input-file-capa" *ngIf="capaFileName.length <= 0" class="btn-file-upload" type="file" (change)="fileLoad($event,uploadType[2])"
+                        value="">
+                    <div class="btn-confirm-upload">
+                        <button pButton *ngIf="capaFileName.length > 0" (click)="updateImageCapa()" class="ui-button-success" type="button" icon="fa-check"
+                            label="Confirmar"></button>
+                        <button pButton *ngIf="capaFileName.length > 0" (click)="cancelUpload(uploadType[2])" class="ui-button-danger" type="button"
+                            icon="fa-close" label="Cancelar"></button>
+
+                    </div>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+</div>

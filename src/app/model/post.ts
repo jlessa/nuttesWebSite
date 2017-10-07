@@ -1,5 +1,5 @@
 
-export class IonicPost {
+export class Post {
     constructor(
         public foto_postagem: string,
         public hora_postagem: string,

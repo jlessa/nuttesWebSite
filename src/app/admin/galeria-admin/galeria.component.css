@@ -1,0 +1,60 @@
+.imagem-perfil {
+    margin-bottom: 20px;
+}
+.profile-img img{
+    margin-top: 10px;
+}
+.btn-profile-image {    
+    margin-top: 10px;  
+    width: 40%;
+    margin-left: 10px; 
+}
+
+.btn-confirm-upload{
+    margin-top: 7px;
+    margin-left: 15px;
+}
+
+input[type='file'] {
+    display: none
+}
+
+img{
+    width: 80%;   
+    height: 360px;   
+}
+
+/deep/.galleriaImg img{
+    width: 100% !important;   
+    height: 360px !important;   
+}
+
+/deep/ .ui-galleria-frame-content img{
+    width: 100% !important;   
+    height: auto !important;   
+}
+
+/deep/ .ui-galleria-filmstrip{
+    width: 100% !important;   
+}
+.btn-icon{
+    margin-right: 20px;
+    padding: 5px 0px;
+}
+.btn-group-upload {
+    padding: 0;
+}
+label {
+    background-color: #0267BF;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 6px 20px;
+    font-weight: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+label:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+}

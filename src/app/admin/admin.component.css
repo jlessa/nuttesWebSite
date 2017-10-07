@@ -1,20 +1,18 @@
-.content-body {
-    margin-left: 135px;
-}
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 #header {
-background-color: #333;
-height: 60px;
-position: fixed;
-top: 0px;
-z-index: 99;
-width: 100%;
+    background-color: #1B1B1B;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+    width: 100%;
 }
 
 #top-logo {
-    height: 60px;    
+    height: 50px;    
     margin-left: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 5px;    
 }
 
 #notifications {
@@ -22,31 +20,50 @@ width: 100%;
     float: right;
 }
 
-#sidenav, #sidenav-mini {
-    height: 100%;
+#sidenav {
+    height: 100%;    
     position: fixed;
+    z-index: 98;
+    opacity: 0.95;
     /*
     caso queira colocar um header
     top: 60px;
     */
+    z-index: 98;
     padding-left: 0px;
-    padding-top: 30px;
-    background-color: #333 !important;
+    padding-top: 70px;
+    background-color: #1B1B1B !important;
 }
 
-
-
-#content-body {
-    padding-top: 55px;
+.content-body {
+    padding-top: 60px;       
 }
 
 #minigutter {
     display:none;
 }
 
-/deep/ .menuItem ul li{
+.menu-icon{    
+    color: white;
+    font-size: 24px;              
+}
+
+/deep/ .ui-menu{
+    border: 0 !important;
+}
+
+/deep/ .ui-menu .ui-menuitem-link:hover{
+    background: #F58623 !important; 
+    opacity: 100% !important; 
+}
+
+/deep/ .ui-menu .ui-menuitem-link{
     color: white !important;    
-    font-size: 18px !important;
+    background: #1B1B1B;
+    font-size: 16px !important;
+}
+
+@media only screen and (max-width: 767px) {
 }
 
 /*
@@ -65,3 +82,5 @@ width: 100%;
 }
 
 */
+
+

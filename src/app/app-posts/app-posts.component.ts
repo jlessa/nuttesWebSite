@@ -1,5 +1,5 @@
 import { User } from './../model/user';
-import { IonicPost } from './../model/ionic-post';
+import { Post } from './../model/post';
 import { IonicAppService } from '../services/ionic-app.service';
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
@@ -12,7 +12,7 @@ import * as firebase from 'firebase';
 })
 export class AppPostsComponent implements OnInit {
 
-  posts: IonicPost[] = [];
+  posts: Post[] = [];
   users: User[] = [];
   user: User;
   constructor(private ionicAppService: IonicAppService) { }
@@ -43,7 +43,7 @@ export class AppPostsComponent implements OnInit {
         // tslint:disable-next-line:prefer-const
         let tmp: string[] = snapshot.val();
         this.posts = Object.keys(tmp).map(key => tmp[key]);
-        this.posts = this.posts.filter((post: IonicPost) => post.foto_postagem !== '');
+        this.posts = this.posts.filter((post: Post) => post.foto_postagem !== '');
       });
   }
 

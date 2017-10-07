@@ -1,0 +1,86 @@
+<app-admin></app-admin>
+
+<div class="ui-g ui-fluid" style="margin-top:25px;padding:4px 10px;border-bottom: 0 none">
+    <div class="ui-g-1 ui-md-1 icon-filter">
+        <i class="fa fa-search"></i>
+    </div>
+    <div class="ui-g-11 ui-md-11">
+        <input class="input-filter" #gb type="text" pInputText placeholder="Filtro">
+    </div>
+</div>
+<p-dataTable [value]="users" [globalFilter]="gb" [responsive]="true">
+    <p-column field="foto_profile">
+        <ng-template let-col let-user="rowData" pTemplate="body">
+            <img src="{{user[col.field]}}" width="80" height="80">
+        </ng-template>
+    </p-column>
+    <p-column field="nome"></p-column>
+    <p-column field="email"></p-column>
+    <p-column styleClass="col-button">
+        <ng-template let-user="rowData" pTemplate="body">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-6 ui-md-6 btn-table">
+                    <button class="ui-button-warning" type="button" (click)="editUser(user)" pButton icon="fa-pencil"></button>
+                </div>
+                <div class="ui-g-6 ui-md-6 btn-table">
+                    <button class="ui-button-danger" type="button" (click)="onDeleteUser(user)" pButton icon="fa-trash-o"></button>
+                </div>
+            </div>
+        </ng-template>
+    </p-column>
+</p-dataTable>
+
+
+<p-dialog header="Editar Usuário" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" (onAfterHide)="onDialogHide()">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad" style="font-size:16px;text-align:center;padding:20px">
+        <div class="ui-grid-row imagem-perfil">
+            <div class="ui-grid-col-4 profile-img" style="text-align:center">
+                <img [src]="selectedUser.foto_profile" width="150px">
+            </div>
+            <div class="ui-grid-col-8">
+                <ul class="lista-upload">
+                    <label for='input-file'><i class="fa fa-upload btn-icon"></i>Selecionar arquivo</label>
+                    <input id="input-file" class="btn-file-upload" type="file" (change)="fileLoad($event)" value="">
+                    <button type="button" pButton icon="fa-close" (click)="cancelUpload()" class="ui-button-danger btn-profile-image" label="Cancelar"></button>
+                </ul>
+            </div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-3">Nome</div>
+            <div class="ui-grid-col-9">
+                <input type="text" pInputText size="30" placeholder="Digite um Nome" [(ngModel)]="selectedUser.nome">
+            </div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-3">Telefone</div>
+            <div class="ui-grid-col-9">
+                <p-inputMask mask="(99) 99999-9999" size="30" [(ngModel)]="selectedUser.telefone" placeholder="(99) 99999-9999" required></p-inputMask>
+            </div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-3">Email</div>
+            <div class="ui-grid-col-9">
+                <input type="text" pInputText size="30" placeholder="Digite um Email" [(ngModel)]="selectedUser.email" required>
+            </div>
+        </div>
+        
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-3">Bloqueado </div>
+            <div class="ui-grid-col-9">
+                <p-inputSwitch onLabel="Sim" offLabel="Não" [(ngModel)]="selectedUser.status_bloqueado"></p-inputSwitch>
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-3">Digite uma Descrição</div>
+            <div class="ui-grid-col-9">
+                <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" [(ngModel)]="selectedUser.descricao"></textarea>
+            </div>
+        </div>
+    </div>
+    <p-footer>
+        <button type="button" pButton icon="fa-check" (click)="onUpload()" label="Editar"></button>
+        <button type="button" pButton icon="fa-close" class="ui-button-danger" (click)="onDialogHide()" label="Cancelar"></button>
+    </p-footer>
+</p-dialog>
+<!-- -->

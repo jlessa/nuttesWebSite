@@ -1,15 +1,22 @@
+<div class="ui-g ui-g-nopad" id="header">
+  <div class="ui-g-10">
+    <a><i class="fa fa-bars menu-icon"  (click)="hideMenu()" aria-hidden="true"></i></a>
+    <img id="top-logo" src="assets/images/logo3.png" />
+  </div>
+  <div class="ui-g-2" id="notifications"></div>
+</div>
+
 <div class="ui-g ui-g-nopad">
-  <div class="ui-g-2 ui-g-nopad" id="sidegutter">
+  <div class="ui-lg-2 ui-g-2 ui-md-2 ui-g-nopad" *ngIf="!isMenuHidden" id="sidegutter">
     <div id="sidenav">
-      <img id="top-logo" src="assets/images/logo3.png"/>
-      <p-menu [model]="items" styleClass="menuItem" ></p-menu>
+      <p-menu #bigMenu [model]="items" styleClass="menuItem"></p-menu>
     </div>
   </div>
-  <div id="content-body" class="ui-g-10 ui-g-nopad">
+  <div class='content-body'>    
     <router-outlet></router-outlet>
   </div>
 </div>
 
 <script type="javascript">
-  
+
 </script>

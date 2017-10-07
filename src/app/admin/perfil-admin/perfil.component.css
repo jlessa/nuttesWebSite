@@ -1,0 +1,45 @@
+.ui-widget-header {
+    margin-top: 20px;
+    border: 0px solid #cdcdcd !important;
+}
+
+.lista-upload{
+    display: inline-grid;
+    margin-top: 0px;
+}
+
+.imagem-perfil {
+    margin-bottom: 20px;
+}
+.profile-img img{
+    margin-top: 10px;
+}
+.btn-profile-image {    
+    margin-top: 10px;  
+    width: 90%;
+    margin-left: 10px; 
+}
+
+input[type='file'] {
+    display: none
+}
+
+.btn-icon{
+    margin-right: 20px;
+    padding: 5px 0px;
+}
+
+.lista-upload label {
+    background-color: #0267BF;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 6px 20px;
+    font-weight: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .lista-upload label:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+  }
