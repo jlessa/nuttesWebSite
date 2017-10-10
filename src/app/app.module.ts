@@ -26,7 +26,6 @@ import { WebsiteMenuComponent } from './website-menu/website-menu.component';
 import { WebsiteFooterComponent } from './website-footer/website-footer.component';
 import { MenuModule } from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdSidenavModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
